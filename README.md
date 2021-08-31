@@ -1,6 +1,6 @@
 ![](https://i.imgur.com/xG74tOh.png)
 
-#Para inicializar o projeto, faça clone do repositório do github através do código
+# Para inicializar o projeto, faça clone do repositório do github através do código
 `git clone https://github.com/brunobarbosa17/desafio-modulo2-backend-cubos-academy`
 
 #Inicialize o projeto para as dependências serem baixadas
