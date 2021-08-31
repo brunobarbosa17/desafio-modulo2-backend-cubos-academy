@@ -1,0 +1,343 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/contas": {
+      "get": {
+        "tags": [],
+        "description": "Consulta todas as contas do banco tendo a senha do gerente do banco",
+        "parameters": [
+          {
+            "name": "senha_banco",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "Cria uma nova conta bancária",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cpf": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "nome": {
+                  "example": "any"
+                },
+                "data_nascimento": {
+                  "example": "any"
+                },
+                "telefone": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                },
+                "senha\r": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contas/saldo": {
+      "get": {
+        "tags": [],
+        "description": "Exibe o saldo da conta bancária",
+        "parameters": [
+          {
+            "name": "numero_conta",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "senha\r",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "senha",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contas/extrato": {
+      "get": {
+        "tags": [],
+        "description": "Exibe o extrato da conta bancária",
+        "parameters": [
+          {
+            "name": "numero_conta",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "senha\r",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "senha",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/transacoes/depositar": {
+      "post": {
+        "tags": [],
+        "description": "Faz uma transação de depósito de uma conta bancária para outra",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_conta": {
+                  "example": "any"
+                },
+                "valor": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/transacoes/sacar": {
+      "post": {
+        "tags": [],
+        "description": "Faz uma transação de saque de uma conta bancária",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_conta": {
+                  "example": "any"
+                },
+                "senha\r": {
+                  "example": "any"
+                },
+                "valor": {
+                  "example": "any"
+                },
+                "data": {
+                  "example": "any"
+                },
+                "valor\r": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/transacoes/transferir": {
+      "post": {
+        "tags": [],
+        "description": "Faz uma transação de transferência de uma conta bancária para outra",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "numero_conta_origem": {
+                  "example": "any"
+                },
+                "numero_conta_destino": {
+                  "example": "any"
+                },
+                "valor\r": {
+                  "example": "any"
+                },
+                "senha_conta\r": {
+                  "example": "any"
+                },
+                "valor": {
+                  "example": "any"
+                },
+                "senha_conta": {
+                  "example": "any"
+                },
+                "data": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/contas/{numeroConta}": {
+      "delete": {
+        "tags": [],
+        "description": "Excluí uma conta bancária",
+        "parameters": [
+          {
+            "name": "numeroConta",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contas/{numeroConta}/usuario": {
+      "put": {
+        "tags": [],
+        "description": "Altera uma conta bancária existente",
+        "parameters": [
+          {
+            "name": "numeroConta",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cpf": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "nome": {
+                  "example": "any"
+                },
+                "data_nascimento": {
+                  "example": "any"
+                },
+                "telefone": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {}
+}
