@@ -3,19 +3,19 @@
 # Para inicializar o projeto, faça clone do repositório do github através do código
 `git clone https://github.com/brunobarbosa17/desafio-modulo2-backend-cubos-academy`
 
-#Inicialize o projeto para as dependências serem baixadas
+# Inicialize o projeto para as dependências serem baixadas
 `npm init i`
 
-#Após isso, dentro da pasta `src`
-#execute
+# Após isso, dentro da pasta `src`
+# execute
 `node index.js`
 
-#Feito isso, basta conferir as listas de rotas e modelos abaixo
+# Feito isso, basta conferir as listas de rotas e modelos abaixo
 
-##Para consultar a documentação basta acessar `localhost:3000/docs`
+## Para consultar a documentação basta acessar `localhost:3000/docs`
 
 
-###_________________________________________________
+### _________________________________________________
 # Desafio | Back-end - Módulo 2
 
 Você acabou de ser contratado pela melhor empresa de tecnologia do mundo: a **CUBOS**.
